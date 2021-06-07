@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.avelino.sistemadepedidos.domain.Cliente;
-import com.avelino.sistemadepedidos.domain.Cliente;
 import com.avelino.sistemadepedidos.dto.ClienteDTO;
 import com.avelino.sistemadepedidos.repositories.ClienteRepository;
 import com.avelino.sistemadepedidos.services.exceptions.DataIntegrityException;
@@ -28,6 +27,7 @@ public class ClienteService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
 		}
+	
 	public Cliente update(Cliente obj) {
 		Cliente newObj = find(obj.getId());
 		updateData(newObj, obj);
